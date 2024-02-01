@@ -10,7 +10,7 @@ public interface ITower
     int Range { get; set; }
     float FireRate { get; set; }
 
-    void Fire(GameObject i_target);
+    void Fire(IEnemy i_target);
     void Upgrade();
     void RefundTower();
 }

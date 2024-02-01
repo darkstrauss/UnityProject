@@ -1,8 +1,7 @@
-
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewTower", menuName = "ScriptableObjects/Tower")]
-public class SO_Tower : ScriptableObject, ITower
+public class SO_Tower : ScriptableObject
 {
     [SerializeField]
     private int _cost;
@@ -58,21 +57,6 @@ public class SO_Tower : ScriptableObject, ITower
     {
         get => _fireRate;
         set => _fireRate = value;
-    }
-
-    public void Fire(GameObject i_target)
-    {
-        
-    }
-
-    public void RefundTower()
-    {
-        
-    }
-
-    public void Upgrade()
-    {
-        
     }
 
 }

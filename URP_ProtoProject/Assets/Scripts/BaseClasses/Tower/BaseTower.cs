@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BaseTower : MonoBehaviour, ITower
 {
+    [SerializeField]
+    private SO_Tower properties;
+
     public int Cost { get; set; }
     public float Damage { get; set; }
     public float HealthDamageMultiplier { get; set; }
@@ -12,20 +15,20 @@ public class BaseTower : MonoBehaviour, ITower
     public int Range { get; set; }
     public float FireRate { get; set; }
 
-    public BaseTower(int i_cost, int i_damage, float i_healthDamageMultiplier, float i_shieldDamageMultiplier, float i_armorDamageMultiplier, int i_range, float i_fireRate)
+    public BaseTower()
     {
-        Cost = i_cost;
-        Damage = i_damage;
-        HealthDamageMultiplier = i_healthDamageMultiplier;
-        ShieldDamageMultiplier = i_shieldDamageMultiplier;
-        ArmorDamageMultiplier = i_armorDamageMultiplier;
-        Range = i_range;
-        FireRate = i_fireRate;
+        Cost = properties.Cost;
+        Damage = properties.Damage;
+        HealthDamageMultiplier = properties.HealthDamageMultiplier;
+        ShieldDamageMultiplier = properties.ShieldDamageMultiplier;
+        ArmorDamageMultiplier = properties.ArmorDamageMultiplier;
+        Range = properties.Range;
+        FireRate = properties.FireRate;
     }
 
-    public void Fire(GameObject i_target)
+    public void Fire(IEnemy i_target)
     {
-        
+        i_target.Damage(Damage, this);
     }
 
     public void Upgrade()
