@@ -3,12 +3,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewTower", menuName = "ScriptableObjects/Tower")]
 public class SO_Tower : ScriptableObject
 {
+
+    #region VARIABLES
+
     [SerializeField]
     private int _cost;
-    public int Cost 
-    {  
-        get => _cost; 
-        set => _cost = value; 
+    public int Cost
+    {
+        get => _cost;
+        set => _cost = value;
     }
 
     [SerializeField]
@@ -58,5 +61,29 @@ public class SO_Tower : ScriptableObject
         get => _fireRate;
         set => _fireRate = value;
     }
+
+    [SerializeField]
+    private int _maxLevel;
+    public int MaxLevel
+    {
+        get => _maxLevel;
+        set => _maxLevel = value;
+    }
+
+    [SerializeField]
+    private Mesh _visualMesh;
+    public Mesh VisualMesh
+    {
+        get => _visualMesh;
+    }
+
+    [SerializeField]
+    private AnimationCurve _upgradeCurve;
+    public AnimationCurve UpgradeCurve
+    {
+        get => _upgradeCurve;
+    }
+
+    #endregion
 
 }
