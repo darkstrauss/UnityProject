@@ -112,31 +112,46 @@ public class BaseTower : MonoBehaviour, ITower
 
     public BaseTower()
     {
-        Cost = Properties.Cost;
-        Damage = Properties.Damage;
-        HealthDamageMultiplier = Properties.HealthDamageMultiplier;
-        ShieldDamageMultiplier = Properties.ShieldDamageMultiplier;
-        ArmorDamageMultiplier = Properties.ArmorDamageMultiplier;
-        Range = Properties.Range;
-        FireRate = Properties.FireRate;
-        MaxLevel = Properties.MaxLevel;
+        
     }
 
     #endregion
 
     #region FUNCTIONS
 
-    public void Fire(IEnemy i_target)
+    private void Start()
+    {
+        InitializeTowerProperties(Properties);
+    }
+
+    private void OnValidate()
+    {
+        InitializeTowerProperties(Properties);
+    }
+
+    private void InitializeTowerProperties(SO_Tower i_properties)
+    {
+        Cost = i_properties.Cost;
+        Damage = i_properties.Damage;
+        HealthDamageMultiplier = i_properties.HealthDamageMultiplier;
+        ShieldDamageMultiplier = i_properties.ShieldDamageMultiplier;
+        ArmorDamageMultiplier = i_properties.ArmorDamageMultiplier;
+        Range = i_properties.Range;
+        FireRate = i_properties.FireRate;
+        MaxLevel = i_properties.MaxLevel;
+    }
+
+    public virtual void Fire(IEnemy i_target)
     {
         i_target.Damage(Damage, this);
     }
 
-    public void Upgrade()
+    public virtual void Upgrade()
     {
 
     }
 
-    public void PlaceTower()
+    public virtual void PlaceTower()
     {
 
     }

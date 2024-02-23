@@ -17,10 +17,11 @@ MonoBehaviour:
   _healthDamageMultiplier: 1
   _shieldDamageMultiplier: 2
   _armorDamageMultiplier: 0.5
+  _towerFireType: 0
   _range: 5
   _fireRate: 100
   _maxLevel: 100
-  _visualMesh: {fileID: 0}
+  _prefab: {fileID: 3214040603372950000, guid: 9ca84526b4a7d524faf08e632f144bd1, type: 3}
   _upgradeCurve:
     serializedVersion: 2
     m_Curve:

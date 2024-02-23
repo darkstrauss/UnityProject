@@ -69,7 +69,7 @@ public class BaseEnemy : MonoBehaviour, IEnemy
         
     }
 
-    protected void Start()
+    protected virtual void Start()
     {
         ValidateProperties(Properties);
     }

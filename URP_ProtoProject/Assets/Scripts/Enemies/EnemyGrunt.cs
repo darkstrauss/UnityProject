@@ -5,5 +5,8 @@ using UnityEngine;
 
 public class EnemyGrunt : BaseEnemy
 {
-
+    protected override void Start()
+    {
+        base.Start();
+    }
 }
