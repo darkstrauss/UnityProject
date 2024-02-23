@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 119919945564631898}
   - component: {fileID: 6974880909960438807}
   m_Layer: 0
-  m_Name: MachineGunTower
+  m_Name: CannonTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
