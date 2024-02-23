@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewTower", menuName = "ScriptableObjects/Tower")]
-public class SO_Tower : ScriptableObject
+public class SO_Tower : ScriptableObject, ITower
 {
 
     #region VARIABLES
@@ -47,6 +47,14 @@ public class SO_Tower : ScriptableObject
     }
 
     [SerializeField]
+    private ITower.FireType _towerFireType;
+    public ITower.FireType TowerFireType
+    {
+        get => _towerFireType;
+        set => _towerFireType = value;
+    }
+
+    [SerializeField]
     private int _range;
     public int Range
     {
@@ -71,10 +79,10 @@ public class SO_Tower : ScriptableObject
     }
 
     [SerializeField]
-    private Mesh _visualMesh;
-    public Mesh VisualMesh
+    private GameObject _prefab;
+    public GameObject Prefab
     {
-        get => _visualMesh;
+        get => _prefab;
     }
 
     [SerializeField]
@@ -82,6 +90,46 @@ public class SO_Tower : ScriptableObject
     public AnimationCurve UpgradeCurve
     {
         get => _upgradeCurve;
+        set => _upgradeCurve = value;
+    }
+
+    private SO_Tower _properties;
+    public SO_Tower Properties
+    {
+        get => _properties;
+        set => _properties = value;
+    }
+
+    private int _currentLevel;
+    public int CurrentLevel
+    {
+        get => _currentLevel;
+        set => _currentLevel = value;
+    }
+
+    public void FindTarget()
+    {
+
+    }
+
+    public void Fire(IEnemy i_target)
+    {
+
+    }
+
+    public void Upgrade()
+    {
+
+    }
+
+    public void PlaceTower()
+    {
+
+    }
+
+    public void RefundTower()
+    {
+
     }
 
     #endregion

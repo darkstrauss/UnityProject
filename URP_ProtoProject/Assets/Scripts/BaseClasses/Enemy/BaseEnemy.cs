@@ -66,12 +66,27 @@ public class BaseEnemy : MonoBehaviour, IEnemy
 
     public BaseEnemy()
     {
-        Health = Properties.Health;
-        Shield = Properties.Shield;
-        Armor = Properties.Armor;
-        MovementSpeed = Properties.MovementSpeed;
-        Visuals = Properties.VisualMesh;
-        Clip = Properties.Clip;
+        
+    }
+
+    protected void Start()
+    {
+        ValidateProperties(Properties);
+    }
+
+    private void OnValidate()
+    {
+        ValidateProperties(Properties);
+    }
+
+    private void ValidateProperties(SO_Enemy i_properties)
+    {
+        Health = i_properties.Health;
+        Shield = i_properties.Shield;
+        Armor = i_properties.Armor;
+        MovementSpeed = i_properties.MovementSpeed;
+        Visuals = i_properties.VisualMesh;
+        Clip = i_properties.Clip;
     }
 
 

@@ -86,19 +86,24 @@ public class BaseTower : MonoBehaviour, ITower
     }
 
     [SerializeField]
-    private Mesh _visualMesh;
-    public Mesh VisualMesh
-    {
-        get => _visualMesh;
-        set => _visualMesh = value;
-    }
-
-    [SerializeField]
     private AnimationCurve _upgradeCurve;
     public AnimationCurve UpgradeCurve
     {
         get => _upgradeCurve;
         set => _upgradeCurve = value;
+    }
+
+    private ITower.FireType _towerFireType;
+    public ITower.FireType TowerFireType 
+    { 
+        get => _towerFireType; 
+        set => _towerFireType = value;
+    }
+
+    private GameObject _prefab;
+    public GameObject Prefab
+    {
+        get => _prefab;
     }
 
     #endregion
@@ -115,7 +120,6 @@ public class BaseTower : MonoBehaviour, ITower
         Range = Properties.Range;
         FireRate = Properties.FireRate;
         MaxLevel = Properties.MaxLevel;
-        VisualMesh = Properties.VisualMesh;
     }
 
     #endregion
